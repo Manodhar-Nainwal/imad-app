@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone = {
+var articleOne = {
     title: 'Article One ! Manodhar Nainwal',
     heading: 'Article One',
     date: 'August 7, 2017',
@@ -26,7 +26,7 @@ function createTemplate (data) {
     var date = data.date;
     var content = data.content;
     
-    var htmltemplate = `
+    var htmlTemplate = `
      <title>
         ${title}
     </title>
@@ -59,7 +59,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one', function(req,res) {
-res.send(createTemlate(articleOne));
+res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two', function(req,res) {
