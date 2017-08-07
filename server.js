@@ -7,9 +7,9 @@ app.use(morgan('combined'));
 
 var articles = {
     'article-one': {
-        title: 'Article one ! Manodhar Nianwal'
-        heading: 'Article one' 
-        date: 'September 7, 2017'           
+        title: 'Article one ! Manodhar Nianwal',
+        heading: 'Article one', 
+        date: 'September 7, 2017',           
         content: ` 
          <p>
             This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article.
@@ -19,28 +19,28 @@ var articles = {
          </p>
          <p>
               This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
-         </p> 
-        },
+         </p> ` 
+    }
         
     'article-two': {
-        title: 'Article Two ! Manodhar Nianwal'
-        heading: 'Article Two' 
-        date: 'September 8, 2017'           
-        content: 
+        title: 'Article Two ! Manodhar Nianwal',
+        heading: 'Article Two', 
+        date: 'September 8, 2017',           
+        content: ` 
          <p>
             This is the content for my Second article. This is the content for my Second article. This is the content for my Second article. This is the content for my Second article. This is the content for my Second article. This is the content for my Second article.
-        </p> 
-    },
+        </p> ` 
+    }
     
     'article-three': {
-        title: 'Article Three ! Manodhar Nianwal'
-        heading: 'Article Three' 
-        date: 'September 9, 2017'           
-        content:  
+        title: 'Article Three ! Manodhar Nianwal',
+        heading: 'Article Three', 
+        date: 'September 9, 2017',           
+        content: `  
          <p>
             This is the content for my Third article. This is the content for my Third article. This is the content for my Third article. This is the content for my Third article. 
-         </p>   
-    } 
+         </p> `   
+    }
 };
       
 function createTemplate (data) {
@@ -50,10 +50,15 @@ function createTemplate (data) {
     var content = data.content;
     
     var htmlTemplate = `
-     <title>
-        ${title}
-            <meta name="viewport" content="width=divice-width, initial-scale=1"/>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>
+            ${title}
+        </title>
+        <meta name="viewport" content="width=divice-width, initail-scale=1"/>
         <link href="/ui/style.css" rel="stylesheet" />
+    </head>
     <body>
         <div class="container">
         <div>
@@ -66,13 +71,15 @@ function createTemplate (data) {
         <div>
             ${date}
         </div>
-        <div>
-            ${content} 
+            <div>
+            ${content}
+            </div>
         </div>
     </body>
-    ` ;
+    </html>
+ `;
     return htmlTemplate;
-};
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
