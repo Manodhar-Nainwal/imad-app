@@ -52,10 +52,8 @@ function createTemplate (data) {
     var htmlTemplate = `
      <title>
         ${title}
-    </title> 
-        <meta name="viewport" content="width=divice-width, initail-scale=1"/>
+            <meta name="viewport" content="width=divice-width, initial-scale=1"/>
         <link href="/ui/style.css" rel="stylesheet" />
-    </head>
     <body>
         <div class="container">
         <div>
@@ -68,15 +66,13 @@ function createTemplate (data) {
         <div>
             ${date}
         </div>
-          <div>
+        <div>
             ${content} 
         </div>
-        </div>
     </body>
-    </html>
     ` ;
     return htmlTemplate;
-}
+};
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
