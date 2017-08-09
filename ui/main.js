@@ -1,16 +1,23 @@
 //counter code
 var button = document.getElementById('counter');
-var counter = 0;
 
 button.onclick = function() {
 
 
-// Make a request to the counter endpoint
-
-// Capture the reponse and store it in a variable
-
-// Render the variable in the correct span
-counter = counter + 1;
-var span = document.getElementById('count');
-span.innerHTML = counter.toString();
-};
+    // Create a request oblect
+    var reques = new XMLHttpRequest();
+    
+    // Capture the reponse and store it in a variable
+    request.onreadystatchange = function() {
+        if (request.readystat === XMLHttpRequest.DONE) {
+            // Take some action
+            if (request.status === 200) {
+                var counter = request.responseText;
+            }
+        }
+        // Not done yet
+        };
+    // Make the request    
+     request.open('GET" http://manodharn.imad.hasura-app.io/counter', true);  
+     request.send(null);   
+};        
