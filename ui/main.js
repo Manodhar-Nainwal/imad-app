@@ -40,7 +40,7 @@ var submit = document.getElementById('submit_btn');
             }
         }
         // Not done yet
-        };
+        }
     // Make the request  
     var nameInput = document.getElementById('name');
     var name = nameInput.value;
