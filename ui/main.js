@@ -29,7 +29,7 @@ var submit = document.getElementById('submit_btn');
         submit.onclick = function() {
             
             // Create a request oblect
-            var reques = new XMLHttpRequest();
+            var request = new XMLHttpRequest();
             names = JSON.parse(names);
             var list = '';
             for (var i=0; i<names.length; i++) {
