@@ -14,44 +14,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
-    'article-one': {
-        title: 'Article one ! Manodhar Nianwal',
-        heading: 'Article one', 
-        date: 'September 7, 2017',           
-        content: ` 
-         <p>
-            This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article.
-         </p>
-         <p>
-            This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
-         </p>
-         <p>
-              This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
-         </p> ` 
-    },
-        
-    'article-two': {
-        title: 'Article Two ! Manodhar Nianwal',
-        heading: 'Article Two', 
-        date: 'September 8, 2017',           
-        content: ` 
-         <p>
-            This is the content for my Second article. This is the content for my Second article. This is the content for my Second article. This is the content for my Second article. This is the content for my Second article. This is the content for my Second article.
-        </p> `   
-    },
-    
-    'article-three': {
-        title: 'Article Three ! Manodhar Nianwal',
-        heading: 'Article Three', 
-        date: 'September 9, 2017',           
-        content: `   
-         <p>
-            This is the content for my Third article. This is the content for my Third article. This is the content for my Third article. This is the content for my Third article. 
-         </p> `    
-    },
-};
-      
 function createTemplate (data) {
     var title = data.title;
     var heading = data.heading;
