@@ -3,7 +3,7 @@
 //counter code
 var button = document.getElementById('counter');
 
-button.onclick = function() {
+button.onclick = function () {
 
     // Create a request oblect
     var reques = new XMLHttpRequest();
