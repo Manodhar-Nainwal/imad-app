@@ -78,7 +78,7 @@ app.get('/counter', function (req, res) {
 var names = [];
 app.get('/submit-name', function(raq, res) { // URL: /submit-name?name = xxxx
 // get the name from the request
-var names = req.query.name;
+var name = req.query.name;
 
 names.push(names);
 // JSON: Javascript Object Notation
