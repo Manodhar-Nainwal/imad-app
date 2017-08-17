@@ -1,17 +1,19 @@
 //counter code
 var button = document.getElementById('counter');
+var counter = 0;
 
 button.onclick = function () {
 
-    // Create a request oblect
+    // Create a request object
     var reques = new XMLHttpRequest();
     
     // Capture the reponse and store it in a variable
     request.onreadystatchange = function() {
         if (request.readystat === XMLHttpRequest.DONE) {
-            // Take some action
-            if (request.status === 200) {
+            // take some action
+           if (request.status === 200) {
                 var counter = request.responseText;
+                counter = counter + 1;
                 var span = document.getElementById('count');
                 span.innerHTML = counter.toString();
             }
@@ -27,7 +29,7 @@ button.onclick = function () {
      var submit = document.getElementById('submit_btn');
         submit.onclick = function() {
 
-// Create a request oblect
+// Create a request object
         var request = new XMLHttpRequest();
             
 // capture the response and store it in a variable
@@ -49,6 +51,6 @@ button.onclick = function () {
     // Make the request 
      var nameInput = document.getElementById('name');
     var name = nameInput.value;
-     request.open('GET http://manodharn.imad.hasura-app.io/submit-name?name=', +name, true);  
+     request.open('GET http://manodharn.imad.hasura-app.io/counter', true);  
      request.send(null); 
 };
