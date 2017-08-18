@@ -76,11 +76,11 @@ app.get('/counter', function (req, res) {
 });
 
 var names = [];
-app.get('/submit-name', function(req, res) { // URL: /submit-name?name = xxxx
+app.get('/submit-name/:name', function(req, res) { // URL: /submit-name?name = xxxx
 // get the name from the request
 var name = req.query.name;
 
-names.push(names);
+names.push(name);
 // JSON: Javascript Object Notation
 res.send(JSON.stringify(names));
 });
