@@ -76,7 +76,7 @@ app.get('/counter', function (req, res) {
 });
 
 var names = [];
-app.get('/submit-name', function(raq, res) { // URL: /submit-name?name = xxxx
+app.get('/submit-name', function(req, res) { // URL: /submit-name?name = xxxx
 // get the name from the request
 var name = req.query.name;
 
@@ -85,7 +85,7 @@ names.push(names);
 res.send(JSON.stringify(names));
 });
 
-app.get('/article/:articleName', function(req,res) {
+app.get('/article/:articleName', function(req, res) {
     // articleName = article-one
     // articles[articleName] .... {} content object for article one
     
