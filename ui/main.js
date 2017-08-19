@@ -1,14 +1,14 @@
 //counter code
 var button = document.getElementById('counter');
 
-button.onclick = function () {
+button.onClick = function () {
 
     // Create a request object
     var request = new XMLHttpRequest();
     
     // Capture the reponse and store it in a variable
-    request.onreadystatchange = function() {
-        if (request.readystat === XMLHttpRequest.DONE) {
+    request.onreadystatechange = function() {
+        if (request.readystate === XMLHttpRequest.DONE) {
             // take some action
            if (request.status === 200) {
                 var counter = request.responseText;
@@ -26,14 +26,14 @@ button.onclick = function () {
 
 //submit name
      var submit = document.getElementById('submit_btn');
-        submit.onclick = function() {
+        submit.onClick = function() {
 
 // Create a request object
         var request = new XMLHttpRequest();
             
 // capture the response and store it in a variable
-    request.onreadystatchange = function () {
-        if (request.readystat === XMLHttpRequest.DONE) {
+    request.onreadystatechange = function () {
+        if (request.readystate === XMLHttpRequest.DONE) {
             // take some action
             if (request.status === 200) {
                 // capture a lsit of names and rander it
