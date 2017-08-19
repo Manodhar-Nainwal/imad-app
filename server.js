@@ -90,7 +90,7 @@ app.get('/article/:articleName', function(req, res) {
     // articles[articleName] .... {} content object for article one
     
     // select * FROM article WHERE title = '\', DELETE WHERE a = \'asdf'
-    pool.query("select * FROM article WHERE title = $1", [req.params.articleName], function(err, result) {
+    Pool.query("select * FROM article WHERE title = $1", [req.params.articleName], function(err, result) {
         if (err) {
             res.status(500).send(err.toString());
         } else {
