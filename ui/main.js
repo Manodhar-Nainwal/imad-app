@@ -1,7 +1,8 @@
 
 //submit username, password to login
     var submit = document.getElementById('submit_btn');
-    submit.onclick = function() {
+    // submit.onclick = function() {
+    button.onclick = myFunction(); {
 
 // Create a request object
         var request = new XMLHttpRequest();
@@ -30,4 +31,4 @@
      request.setRequestHeader('Content-Type', 'application/json');
      request.send(JSON.stringyfy({username: username, password: password}));
      
-};
+}
