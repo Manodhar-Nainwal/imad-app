@@ -1,30 +1,5 @@
-//counter code
-var button = document.getElementById('counter');
 
-button.onClick = function () {
-
-    // Create a request object
-    var request = new XMLHttpRequest();
-    
-    // Capture the reponse and store it in a variable
-    request.onreadystatechange = function() {
-        if (request.readystate === XMLHttpRequest.DONE) {
-            // take some action
-           if (request.status === 200) {
-                var counter = request.responseText;
-                var span = document.getElementById('count');
-                span.innerHTML = counter.toString();
-            }
-        }
-        // Not done yet
-        };
-        
-    // Make the request    
-     request.open('GET', 'http://manodharn.imad.hasura-app.io/counter', true);  
-     request.send(null);   
-};
-
-//submit name
+//submit username, password to login
      var submit = document.getElementById('submit_btn');
         submit.onClick = function() {
 
@@ -53,7 +28,7 @@ button.onClick = function () {
     // Make the request 
      var nameInput = document.getElementById('name');
      var name = nameInput.value;
-     request.open('GET', 'http://manodharn.imad.hasura-app.io/submit-name?name=' + name, true);  
-     request.send(null); 
+     request.open('POST', 'http://manodharn.imad.hasura-app.io/submit-name?name=' + name, true);  
+     request.send(JSON.stringyfy({username: username, password: password})); 
      
 };
