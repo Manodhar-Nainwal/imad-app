@@ -130,6 +130,11 @@ app.get('/check-login', function(req, res) {
         }
 });
 
+app.get('/logout', function(req, res) {
+    delete req.session.auth;
+    res.send('logged out');
+});
+
 var Pool = new Pool(config);
 app.get('/test_db', function(req, res){
     // make a select request 
